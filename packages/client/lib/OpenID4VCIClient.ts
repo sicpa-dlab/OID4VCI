@@ -147,6 +147,7 @@ export class OpenID4VCIClient {
       baseUrl: this._endpointMetadata.authorization_endpoint,
       uriTypeProperties: ['redirect_uri', 'scope', 'authorization_details'],
       version: this.version(),
+      encodeAsSingleJson: false,
     });
   }
 

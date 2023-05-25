@@ -62,6 +62,7 @@ export type EncodeJsonAsURIOpts = {
   baseUrl?: string;
   param?: string;
   version?: OpenId4VCIVersion;
+  encodeAsSingleJson?: boolean;
 };
 
 export type DecodeURIAsJsonOpts = {
