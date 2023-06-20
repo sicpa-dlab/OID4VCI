@@ -51,10 +51,10 @@ export function determineSpecVersionFromScheme(credentialOfferURI: string, openI
 }
 
 export function getScheme(credentialOfferURI: string) {
-  if (!credentialOfferURI || !credentialOfferURI.includes('://')) {
+  if (!credentialOfferURI || (!credentialOfferURI.includes('://') && !credentialOfferURI.includes('?'))) {
     throw Error('Invalid credential offer URI');
   }
-  return credentialOfferURI.split('://')[0];
+  return credentialOfferURI.includes('://') ? credentialOfferURI.split('://')[0] : credentialOfferURI.split('?')[0];
 }
 
 export function getIssuerFromCredentialOfferPayload(request: CredentialOfferPayload): string | undefined {

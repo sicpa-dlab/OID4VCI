@@ -17,7 +17,7 @@ const debug = Debug('sphereon:oid4vci:offer');
 export class CredentialOfferClient {
   public static async fromURI(uri: string, opts?: { resolve?: boolean }): Promise<CredentialOfferRequestWithBaseUrl> {
     debug(`Credential Offer URI: ${uri}`);
-    if (!uri.includes('?') || !uri.includes('://')) {
+    if (!uri.includes('?') && !uri.includes('://')) {
       debug(`Invalid Credential Offer URI: ${uri}`);
       throw Error(`Invalid Credential Offer Request`);
     }
